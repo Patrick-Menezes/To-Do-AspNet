@@ -33,11 +33,14 @@ namespace To_do_AspNet.Migrations
                     b.Property<DateTime>("CreatAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DateLimit")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsCompleted")
+                    b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")

@@ -26,7 +26,14 @@
                 <span asp-validation-for="CreatAt" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <br />
+                <br />         
+                <div class="form-group">
+                    <label asp-for="DateLimit" class="control-label">Data para entrega</label>
+                    <input type="datetime-local" asp-for="DateLimit" class="form-control" />
+                    <span asp-validation-for="DateLimit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <br />
                 <input type="submit" value="AddTask" class="btn btn-primary" />
             </div>
         </form>

@@ -8,6 +8,7 @@ namespace To_do_AspNet.services
     {
         private readonly To_do_AspNetContext _context;
 
+
         public ActivityServices (To_do_AspNetContext context)
         {
             _context = context;
@@ -15,8 +16,21 @@ namespace To_do_AspNet.services
 
         public List<Activity> FindAll()
         {
-            return _context.Activity.ToList();
+
+
+
+           var list= _context.Activity.ToList();
+         
+            return list;
+
+
         }
+
+ 
+   
+
+
+
 
         public void AddActivity(Activity task)
         {
@@ -28,6 +42,9 @@ namespace To_do_AspNet.services
         {
             return _context.Activity.FirstOrDefault(x=>x.Id ==id);
         }
+
+
+    
 
 
 

@@ -16,14 +16,17 @@ namespace To_do_AspNet.Controllers
 
         public IActionResult Index()
         {
-
             var list = _activityServices.FindAll();
-            return View(list);
+           
 
+            return View(list);
+      
         }
 
         public IActionResult newTask()
         {
+
+
             return View();
 
         }
@@ -33,6 +36,7 @@ namespace To_do_AspNet.Controllers
         [HttpPost]
         public IActionResult AddTask(Activity task)
         {
+ 
             _activityServices.AddActivity(task);
             return RedirectToAction(nameof(Index));
 
@@ -95,6 +99,10 @@ namespace To_do_AspNet.Controllers
 
         }
 
-
     }
+
+
+
+
+
 }

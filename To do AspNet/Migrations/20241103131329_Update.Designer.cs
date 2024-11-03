@@ -12,8 +12,8 @@ using To_do_AspNet.Data;
 namespace To_do_AspNet.Migrations
 {
     [DbContext(typeof(To_do_AspNetContext))]
-    [Migration("20241102195351_initial")]
-    partial class initial
+    [Migration("20241103131329_Update")]
+    partial class Update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,11 +36,14 @@ namespace To_do_AspNet.Migrations
                     b.Property<DateTime>("CreatAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DateLimit")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsCompleted")
+                    b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")

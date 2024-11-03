@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<To_do_AspNet.Models.Activity>
 
+
+
 @{
-
+    
     ViewData["Title"] = "Tasks";
-
- 
-
+   
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -23,6 +23,12 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.DateLimit)
+            </th>
+            <th>
+                Days Left
+            </th>
+            <th>
                Completed
             </th>
         </tr>
@@ -34,9 +40,19 @@
                 <td>
                     @Html.DisplayFor( Model => task.Title)
                 </td>
+
                 <td>
                     @Html.DisplayFor(Model => task.Description)
                 </td>
+
+                <td>
+                    @Html.DisplayFor(Model => task.DateLimit)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(Model => task.Daysleft)
+                </td>
+
                 <td>
                     @Html.DisplayFor(Model => task.IsCompleted)
                 </td>

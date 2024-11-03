@@ -7,15 +7,27 @@
         public String Description { get; set; }
         public bool IsCompleted { get; set; }
         public DateTime CreatAt { get; set; }
+        public DateTime DateLimit { get; set; }
+        public int Daysleft => (DateLimit-DateTime.Now).Days;
 
         public Activity() { }
 
-        public Activity(int id, string title, string description, bool isCompleted, DateTime creatAt)
+        public Activity(int id, string title, string description, bool isCompleted, DateTime creatAt, DateTime dateLimit )
         {
             Id = id;
             Title = title;
-            Description = description;       
+            Description = description;
             CreatAt = creatAt;
+            DateLimit = dateLimit;
+         
         }
+
+   
     }
+
+  
+
+
+
+
 }
